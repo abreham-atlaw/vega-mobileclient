@@ -10,8 +10,7 @@ enum QueryStage{
   mood,
   instruments,
   lyricsType,
-  generating,
-  generated,
+  generate,
   play
 }
 

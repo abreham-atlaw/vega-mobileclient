@@ -54,9 +54,9 @@ class GenerateEvent extends GenerateBaseEvent{
 }
 
 
-class GeneratedEvent extends GenerateBaseEvent{
+class PlayEvent extends GenerateBaseEvent{
 
   final String songId;
-  GeneratedEvent(this.songId);
+  PlayEvent(this.songId);
   
 }

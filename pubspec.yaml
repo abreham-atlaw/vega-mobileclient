@@ -44,6 +44,9 @@ dependencies:
   intl: ^0.18.1
   localstorage: ^4.0.1+4
   animations: ^2.0.8
+  audio_service: ^0.18.11
+  audio_session: ^0.1.16
+  audioplayers: ^5.1.0
 
 dev_dependencies:
   flutter_test:

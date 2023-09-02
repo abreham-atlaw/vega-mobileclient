@@ -16,8 +16,7 @@ class GenerateBloc extends AsyncBloc<GenerateState>{
     QueryStage.mood,
     QueryStage.instruments,
     QueryStage.lyricsType,
-    QueryStage.generating,
-    QueryStage.generated,
+    QueryStage.generate,
     QueryStage.play
   ];
 
@@ -31,6 +30,7 @@ class GenerateBloc extends AsyncBloc<GenerateState>{
     on<SelectLyricsTypeEvent>(_handleSelectLyricsTypes);
     on<SelectInstrumentsEvent>(_handleSelectInstruments);
     on<SelectMoodEvent>(_handleSelectMood);
+    on<PlayEvent>(_handleGenerated);
 
   }
 
@@ -69,6 +69,12 @@ class GenerateBloc extends AsyncBloc<GenerateState>{
 
   Future<void> _handleSelectLyricsTypes(SelectLyricsTypeEvent event, Emitter emitter) async{
     state.query.lyricsType = event.lyricsTypes;
+    nextStage();
+    syncState(emitter);
+  }
+
+  Future<void> _handleGenerated(PlayEvent event, Emitter emitter) async{
+    state.songId = event.songId;
     nextStage();
     syncState(emitter);
   }

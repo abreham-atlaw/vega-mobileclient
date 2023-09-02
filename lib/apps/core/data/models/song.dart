@@ -14,7 +14,7 @@ class Song{
     required this.audioUrl,
     required this.coverImageUrl,
     required this.title,
-    required this.lyrics
+    required this.lyrics,
   });
   
 

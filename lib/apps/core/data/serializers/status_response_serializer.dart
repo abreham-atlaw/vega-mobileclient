@@ -9,7 +9,7 @@ class StatusResponseSerializer extends Serializer<StatusResponse, Map<String, dy
   StatusResponse deserialize(Map<String, dynamic> data) {
     return StatusResponse(
         GenerationStatus.values[data["status"]],
-        data["song_id"]
+        data["song"]
     );
   }
 

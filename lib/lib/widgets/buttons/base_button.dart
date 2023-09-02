@@ -9,6 +9,7 @@ class BaseButton extends ElevatedButton {
       EdgeInsets? padding,
       Color? textColor,
       BorderSide? borderSide,
+      BorderRadius? borderRadius,
       Color? backgroundColor})
       : super(
             style: ElevatedButton.styleFrom(
@@ -19,6 +20,6 @@ class BaseButton extends ElevatedButton {
                         horizontal: SpacingConfigs.spacing5),
                 shape: RoundedRectangleBorder(
                   side: borderSide ?? BorderSide.none,
-                    borderRadius:
+                    borderRadius: borderRadius ??
                         BorderRadius.circular(SpacingConfigs.spacing3))));
 }

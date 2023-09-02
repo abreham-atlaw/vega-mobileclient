@@ -9,10 +9,10 @@ class SongSerializer extends Serializer<Song, Map<String, dynamic>>{
   Song deserialize(Map<String, dynamic> data) {
     return Song(
       id: data["id"],
-      coverImageUrl: data["cover_image"],
+      coverImageUrl: data["cover"],
       audioUrl: data["audio"],
       lyrics: data["lyrics"],
-      title: data["title"]
+      title: data["title"],
     );
   }
 

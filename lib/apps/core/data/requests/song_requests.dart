@@ -29,7 +29,7 @@ class GenerateRequest extends Request<String>{
   final GenerateQuery _query;
 
   GenerateRequest(this._query): super(
-    "core/song/generate",
+    "core/song/generate/",
     method: Method.post
   );
 
@@ -40,7 +40,7 @@ class GenerateRequest extends Request<String>{
 
   @override
   String deserializeObject(response) {
-    return response["id"];
+    return response["request_id"];
   }
 
 }
@@ -51,7 +51,7 @@ class GetGenerationStatusRequest extends Request<StatusResponse>{
   final StatusResponseSerializer _serializer = StatusResponseSerializer();
 
   GetGenerationStatusRequest(String generationId): super(
-    "core/song/status",
+    "core/song/status/",
     method: Method.get,
     getParams: {
       "id": generationId
@@ -70,7 +70,7 @@ class GetSongRequest extends Request<Song>{
   final SongSerializer _serializer = SongSerializer();
 
   GetSongRequest(String id): super(
-    "core/song/details",
+    "core/song/detail/",
     method: Method.get,
     getParams: {
       "id": id

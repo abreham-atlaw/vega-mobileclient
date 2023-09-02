@@ -38,6 +38,11 @@ class SpacingConfigs {
   static const double spacing3_5 = spacing3 * 1.15;
   static const double spacing4 = spacing3 * 1.5;
   static const double spacing5 = spacing4 * 1.5;
+  static const double spacing6 = spacing5 * 1.5;
+  static const double spacing7 = spacing6 * 1.5;
+  static const double spacing8 = spacing7 * 1.5;
+  static const double spacing9 = spacing8 * 1.5;
+  static const double spacing10 = spacing9 * 1.5;
 }
 
 class WidgetSizeConfigs {

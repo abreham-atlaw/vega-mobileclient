@@ -2,6 +2,7 @@
 
 
 enum GenerationStatus {
+  none,
   instrumental,
   lyrics,
   vocal,

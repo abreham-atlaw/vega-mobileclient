@@ -5,12 +5,12 @@ import 'package:animations/animations.dart';
 import 'package:flutter/widgets.dart';
 import 'package:vega/apps/core/application/blocs/generate_bloc.dart';
 import 'package:vega/apps/core/application/states/generate_state.dart';
-import 'package:vega/apps/core/presentation/screens/generating_screen.dart';
-import 'package:vega/apps/core/presentation/screens/select_era_screen.dart';
-import 'package:vega/apps/core/presentation/screens/select_genre_screen.dart';
-import 'package:vega/apps/core/presentation/screens/select_instruments_screen.dart';
-import 'package:vega/apps/core/presentation/screens/select_lyrics_screen.dart';
-import 'package:vega/apps/core/presentation/screens/select_mood_screen.dart';
+import 'package:vega/apps/core/presentation/screens/generation/generating_screen.dart';
+import 'package:vega/apps/core/presentation/screens/generation/select_era_screen.dart';
+import 'package:vega/apps/core/presentation/screens/generation/select_genre_screen.dart';
+import 'package:vega/apps/core/presentation/screens/generation/select_instruments_screen.dart';
+import 'package:vega/apps/core/presentation/screens/generation/select_lyrics_screen.dart';
+import 'package:vega/apps/core/presentation/screens/generation/select_mood_screen.dart';
 import 'package:vega/lib/utils/routing.dart';
 import 'package:vega/lib/widgets/screens/bloc_screen.dart';
 
@@ -22,7 +22,7 @@ class GenerateScreen extends AsyncBlocScreen<GenerateBloc, GenerateState>{
     QueryStage.lyricsType: (BuildContext context, GenerateState state) => const SelectLyricsScreen(),
     QueryStage.instruments: (BuildContext context, GenerateState state) => SelectInstrumentsScreen(),
     QueryStage.mood: (BuildContext context, GenerateState state) => const SelectMoodScreen(),
-    QueryStage.generating: (BuildContext context, GenerateState state) => GeneratingScreen(state.query),
+    QueryStage.generate: (BuildContext context, GenerateState state) => GeneratingScreen(state.query),
 
   };
 
