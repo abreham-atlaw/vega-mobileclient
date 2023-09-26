@@ -22,12 +22,12 @@ class RawTextInputWidget extends TextField {
                 filled: true,
                 border: OutlineInputBorder(
                     borderRadius:
-                        BorderRadius.circular(SpacingConfigs.spacing3)),
+                        BorderRadius.circular(SpacingConfigs.spacing4)),
                 prefixIcon: Icon(iconData),
                 focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: ColorsConfigs.primary),
+                    borderSide: const BorderSide(color: ColorsConfigs.primary),
                     borderRadius: BorderRadius.circular(
-                      SpacingConfigs.spacing3,
+                      SpacingConfigs.spacing4,
                     ))));
 }
 

@@ -1,7 +1,7 @@
 
 
-import 'package:vega/apps/core/data/models/generate_query_sample.dart';
-import 'package:vega/apps/core/data/serializers/generate_query_sample_serializer.dart';
+import 'package:vega/apps/generation/data/models/generate_query_sample.dart';
+import 'package:vega/apps/generation/data/serializers/generate_query_sample_serializer.dart';
 import 'package:vega/lib/network/request.dart';
 
 class GetRecommendationsRequest extends Request<List<GenerateQuerySample>>{

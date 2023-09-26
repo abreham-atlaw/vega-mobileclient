@@ -15,10 +15,13 @@ class FunctionalAsyncHandler extends AsyncEventHandler<AsyncEvent, BaseState> {
   Future<void> Function(AsyncEvent event, BaseState state)? onDoneCallback;
 
   FunctionalAsyncHandler(this.onEventCallback, super._parentBloc,
-      {this.stateGetter,
-      this.onErrorCallback,
-      this.onLoadingCallback,
-      this.onDoneCallback});
+      {
+        this.stateGetter,
+        this.onErrorCallback,
+        this.onLoadingCallback,
+        this.onDoneCallback,
+        super.errorMapper
+      });
 
   @override
   onEvent(AsyncEvent event, BaseState state) async {
@@ -69,18 +72,26 @@ class AsyncBloc<S extends BaseState> extends Bloc<AsyncEvent, S> {
 
   Future<void> onInit() async {}
 
-  Future<void> asyncCall(AsyncEvent event, Emitter emitter,
-      Future<void> Function(AsyncEvent event, BaseState state) onEvent,
-      {AsyncState Function(BaseState)? stateGetter,
-      Future<void> Function(AsyncEvent event, BaseState state, dynamic error)?
-          onError,
-      Future<void> Function(AsyncEvent event, BaseState state)? onLoading,
-      Future<void> Function(AsyncEvent event, BaseState state)? onDone}) async {
+  Future<void> asyncCall(
+        AsyncEvent event,
+        Emitter emitter,
+        Future<void> Function(AsyncEvent event, BaseState state) onEvent,
+        {
+          AsyncState Function(BaseState)? stateGetter,
+          Future<void> Function(AsyncEvent event, BaseState state, dynamic error)?
+              onError,
+          Future<void> Function(AsyncEvent event, BaseState state)? onLoading,
+          Future<void> Function(AsyncEvent event, BaseState state)? onDone,
+          ErrorMapper? errorMapper
+        }
+      ) async {
     var handler = FunctionalAsyncHandler(onEvent, this,
         stateGetter: stateGetter,
         onDoneCallback: onDone,
         onLoadingCallback: onLoading,
-        onErrorCallback: onError);
+        onErrorCallback: onError,
+        errorMapper: errorMapper
+    );
     await handler.handle(event, emitter);
   }
 

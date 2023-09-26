@@ -1,12 +1,12 @@
 
 
 
-import 'package:vega/apps/core/data/models/generate_query.dart';
-import 'package:vega/apps/core/data/models/generation_status_response.dart';
+import 'package:vega/apps/generation/data/models/generate_query.dart';
+import 'package:vega/apps/generation/data/models/generation_status_response.dart';
 import 'package:vega/apps/core/data/models/song.dart';
-import 'package:vega/apps/core/data/serializers/generate_query_serializer.dart';
+import 'package:vega/apps/generation/data/serializers/generate_query_serializer.dart';
 import 'package:vega/apps/core/data/serializers/song_serializer.dart';
-import 'package:vega/apps/core/data/serializers/status_response_serializer.dart';
+import 'package:vega/apps/generation/data/serializers/status_response_serializer.dart';
 import 'package:vega/lib/network/request.dart';
 
 class GetRecentRequest extends Request<List<Song>>{

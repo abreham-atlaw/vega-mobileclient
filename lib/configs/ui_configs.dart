@@ -10,7 +10,7 @@ class ColorsConfigs {
   static const Color tertiary = Color.fromARGB(255, 0, 88, 209);
   static const Color light = Color.fromARGB(255, 255, 255, 255);
   static const Color grey = Color.fromARGB(255, 198, 198, 198);
-  static const Color danger = Color.fromARGB(255, 227, 0, 0);
+  static const Color danger = Color.fromARGB(255, 255, 41, 41);
   static const Color warning = Color.fromARGB(255, 249, 119, 0);
   static const Color success = Color.fromARGB(255, 0, 188, 98);
   static const Color info = Color.fromARGB(255, 0, 163, 255);

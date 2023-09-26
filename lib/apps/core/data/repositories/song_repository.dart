@@ -1,8 +1,8 @@
 
 
 
-import 'package:vega/apps/core/data/models/generate_query.dart';
-import 'package:vega/apps/core/data/models/generation_status_response.dart';
+import 'package:vega/apps/generation/data/models/generate_query.dart';
+import 'package:vega/apps/generation/data/models/generation_status_response.dart';
 import 'package:vega/apps/core/data/models/song.dart';
 import 'package:vega/apps/core/data/requests/song_requests.dart';
 import 'package:vega/di/core.dart';

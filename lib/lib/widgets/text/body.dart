@@ -8,7 +8,7 @@ class BodyText extends Text {
       {super.key,
       double? fontSize,
       Color? color,
-      FontWeight? fontWeight,
+      FontWeight? fontWeight = FontWeight.w300,
       super.maxLines,
       super.overflow,
       TextDecoration decoration = TextDecoration.none,

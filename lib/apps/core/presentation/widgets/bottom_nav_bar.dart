@@ -59,7 +59,7 @@ class BottomNavBar extends StatelessWidget{
           const NavBarIcon(icon: Icons.home_outlined, text: "Home", url: "/core/home"),
           CircularIconButton(
             onPressed: (){
-              RoutingUtils.redirect("/core/generate", context);
+              RoutingUtils.redirect("/generation/generate", context);
             },
             icon: Icons.add,
           ),

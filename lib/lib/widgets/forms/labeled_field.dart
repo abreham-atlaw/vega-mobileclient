@@ -12,11 +12,11 @@ class LabeledFormField extends StatelessWidget {
       TextStyle? labelStyle,
       super.key})
       : labelStyle = labelStyle ??
-            TextStyle(
-                color: ColorsConfigs.dark,
+            const TextStyle(
+                color: ColorsConfigs.white,
                 fontSize: FontSizeConfigs.size1,
                 decoration: TextDecoration.none,
-                fontWeight: FontWeight.bold);
+                fontWeight: FontWeight.w200);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class LabeledFormField extends StatelessWidget {
           label,
           style: labelStyle,
         ),
-        SizedBox(height: SpacingConfigs.spacing0),
+        const SizedBox(height: SpacingConfigs.spacing1),
         inputField
       ],
     );

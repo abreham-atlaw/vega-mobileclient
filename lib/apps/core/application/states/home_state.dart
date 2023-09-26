@@ -1,7 +1,7 @@
 
 
 
-import 'package:vega/apps/core/data/models/generate_query_sample.dart';
+import 'package:vega/apps/generation/data/models/generate_query_sample.dart';
 import 'package:vega/apps/core/data/models/song.dart';
 import 'package:vega/lib/async_bloc/base_state.dart';
 
