@@ -7,7 +7,7 @@ The vega project is structured as follows:
 
     https://github.com/abreham-atlaw/vega-mobileclient/: This repository contains the source code for the mobile client of the vega app. It's a flutter app with BLoc state management.
     https://github.com/biruk-ay/vega-backend/: This repository contains the source code for the backend of the vega app. It contains API Endpoints, models, .... It's a python Django project.
-    https://github.com/abreham-atlaw/llmchat-worker/: This repository contains the source code for running the models on supported platform(usually with GPU) and able to be accessed as an API through the server(https://github.com/abreham-atlaw/llmchat-server/)
+    https://github.com/abreham-atlaw/oscillate/: This repository contains the source code for training our vocal model.
 
 
 <h2>Purpose</h2>
