@@ -12,6 +12,10 @@ class SongRepository{
 
   final NetworkClient _networkClient = CoreProviders.provideNetworkClient();
 
+  Future<NetworkClient> get _authenticatedNetworkClient async {
+    return await CoreProviders.provideAuthenticatedNetworkClient();
+  }
+
   Future<Song> getSong(String id) async{
     return await _networkClient.execute(GetSongRequest(id));
   }
@@ -38,11 +42,11 @@ class SongRepository{
   }
 
   Future<String> generate(GenerateQuery query) async{
-    return await _networkClient.execute(GenerateRequest(query));
+    return await (await _authenticatedNetworkClient).execute(GenerateRequest(query));
   }
 
   Future<StatusResponse> getStatus(String requestId) async{
-    return await _networkClient.execute(GetGenerationStatusRequest(requestId));
+    return await (await _authenticatedNetworkClient).execute(GetGenerationStatusRequest(requestId));
   }
 
 }

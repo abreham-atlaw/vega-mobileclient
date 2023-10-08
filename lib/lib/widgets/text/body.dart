@@ -9,12 +9,16 @@ class BodyText extends Text {
       double? fontSize,
       Color? color,
       FontWeight? fontWeight = FontWeight.w300,
+      double? letterSpacing,
+      double? height,
       super.maxLines,
       super.overflow,
       TextDecoration decoration = TextDecoration.none,
       super.textAlign})
       : super(text,
             style: TextStyle(
+                height: height,
+                letterSpacing: letterSpacing,
                 color: color ?? ColorsConfigs.white,
                 fontSize: fontSize ?? FontSizeConfigs.size1,
                 decoration: decoration,

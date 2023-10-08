@@ -11,6 +11,7 @@ import 'package:vega/apps/player/application/blocs/player_bloc.dart';
 import 'package:vega/apps/player/application/states/player_state.dart';
 import 'package:vega/apps/player/presentation/widgets/player_widgets.dart';
 import 'package:vega/configs/ui_configs.dart';
+import 'package:vega/lib/utils/routing.dart';
 import 'package:vega/lib/widgets/containers/percentage_container.dart';
 import 'package:vega/lib/widgets/screens/bloc_screen.dart';
 import 'package:vega/lib/widgets/text/body.dart';
@@ -59,19 +60,32 @@ class PlayerScreen extends AsyncBlocScreen<PlayerBloc, PlayerState>{
           ),
           child: Column(
             children: [
+              Container(
+                child: IconButton(
+                  onPressed: () {
+                    RoutingUtils.redirect("/core/home", context);
+                  },
+                  icon: const Icon(
+                    Icons.keyboard_arrow_down,
+                    color: ColorsConfigs.light,
+                  ),
+                ),
+              ),
               Expanded(
                 child: SingleChildScrollView(
-
                   scrollDirection: Axis.vertical,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: SpacingConfigs.spacing7
+                      vertical: SpacingConfigs.spacing7,
+                      horizontal: SpacingConfigs.spacing5
                     ),
                     child: BodyText(
                       state.song!.lyrics,
                       overflow: TextOverflow.clip,
-                      fontSize: FontSizeConfigs.size1,
-                      textAlign: TextAlign.center,
+                      fontSize: FontSizeConfigs.size2,
+                      textAlign: TextAlign.start,
+                      fontWeight: FontWeight.w200,
+                      letterSpacing: 2,
                     ),
                   ),
                 ),
@@ -106,7 +120,7 @@ class PlayerScreen extends AsyncBlocScreen<PlayerBloc, PlayerState>{
                       height: SpacingConfigs.spacing3,
                     ),
                     PlayerControllerWidget(
-                        isPlaying: state.isPlaying!,
+                        isPlaying: state.isPlaying,
                         bloc: context.read<PlayerBloc>(),
                     )
                   ],

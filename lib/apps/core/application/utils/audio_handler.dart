@@ -1,5 +1,7 @@
 
 
+import 'dart:async';
+
 import 'package:audio_service/audio_service.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:vega/apps/core/data/models/song.dart';
@@ -7,11 +9,15 @@ import 'package:vega/apps/core/data/models/song.dart';
 class VegaAudioHandler extends BaseAudioHandler with QueueHandler, SeekHandler{
 
   Song? currentSong;
+
+  final StreamController<bool> _isPlayingStreamController = StreamController.broadcast();
+  late Stream<bool> isPlayingListener = _isPlayingStreamController.stream;
+
   final AudioPlayer _player = AudioPlayer();
 
   VegaAudioHandler();
 
-  Stream<Duration> get duration {
+  Stream<Duration> get durationListener {
     return _player.onDurationChanged;
   }
 
@@ -19,36 +25,29 @@ class VegaAudioHandler extends BaseAudioHandler with QueueHandler, SeekHandler{
     return _player.onPositionChanged;
   }
 
-
-  initialize() async{
-    _player.onPositionChanged.listen((event) {
-      playbackState.add(PlaybackState(
-          updatePosition: event
-      ));
-    });
-    _player.onPlayerComplete.listen((event) {
-      playbackState.add(PlaybackState(
-        playing: false
-      ));
-    });
+  Future<Duration> get duration async{
+    return await durationListener.first;
   }
 
+  set isPlaying(bool isPlaying){
+    _isPlayingStreamController.add(isPlaying);
+  }
 
+  initialize() async{
+    _player.onPlayerComplete.listen((event) {
+     isPlaying = false;
+    });
+  }
 
   @override
   Future<void> play() async{
     await _player.resume();
-    playbackState.add(PlaybackState(
-      playing: true,
-    ));
-
+    isPlaying = true;
   }
 
   Future<void> pause() async{
     await _player.pause();
-    playbackState.add(PlaybackState(
-      playing: false
-    ));
+    isPlaying = false;
   }
 
   Future<void> seek(Duration position) async{

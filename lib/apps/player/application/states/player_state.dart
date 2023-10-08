@@ -11,9 +11,9 @@ class PlayerState extends BaseState{
   Song? song;
   String? songId;
 
-  Stream<Duration>? currentPosition;
-  Stream<Duration>? duration;
-  Stream<bool>? isPlaying;
+  Duration currentPosition = const Duration(seconds: 0);
+  Duration duration = const Duration(seconds: 0);
+  bool isPlaying = false;
 
   @override
   BaseState newInstance() {

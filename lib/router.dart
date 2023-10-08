@@ -19,7 +19,7 @@ class VegaAppRouter extends GoRouter {
           GoRoute(path: "/player/play", builder: (context, state) => PlayerScreen(songId: state.extra as String?)),
 
           GoRoute(path: "/auth/login", builder: (context, state) => const LoginScreen()),
-          GoRoute(path: "/auth/signup", builder: (context, state) => const SignupScreen())
+          GoRoute(path: "/auth/signup", builder: (context, state) => const SignupScreen()),
         ]);
 
 }

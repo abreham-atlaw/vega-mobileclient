@@ -6,6 +6,7 @@ import 'package:vega/apps/generation/data/models/generate_query_sample.dart';
 import 'package:vega/apps/core/data/models/song.dart';
 import 'package:vega/configs/ui_configs.dart';
 import 'package:vega/lib/widgets/containers/width_height_container.dart';
+import 'package:vega/lib/widgets/navigation/link.dart';
 import 'package:vega/lib/widgets/text/body.dart';
 import 'package:vega/lib/widgets/text/headers.dart';
 
@@ -17,29 +18,33 @@ class SongInstanceWidget extends StatelessWidget{
   
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          WidthSizedHeightContainer(
-            width: double.infinity,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(SpacingConfigs.spacing3)),
-                image: DecorationImage(
-                  image: NetworkImage(_song.coverImageUrl)
-                )
+    return Link(
+      to: "/player/play",
+      extra: _song.id,
+      child: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            WidthSizedHeightContainer(
+              width: double.infinity,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(SpacingConfigs.spacing3)),
+                  image: DecorationImage(
+                    image: NetworkImage(_song.coverImageUrl)
+                  )
+                ),
               ),
             ),
-          ),
-          const SizedBox(
-            height: SpacingConfigs.spacing1,
-          ),
-          BodyText(
-            _song.title,
-            fontWeight: FontWeight.w700,
-          )
-        ],
+            const SizedBox(
+              height: SpacingConfigs.spacing1,
+            ),
+            BodyText(
+              _song.title,
+              fontWeight: FontWeight.w700,
+            )
+          ],
+        ),
       ),
     );
   }
