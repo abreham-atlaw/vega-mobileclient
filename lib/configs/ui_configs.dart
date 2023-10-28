@@ -5,7 +5,7 @@ import 'package:loading_indicator/loading_indicator.dart';
 
 class ColorsConfigs {
   static const Color primary = Color.fromARGB(255, 0, 98, 189);
-  static const Color primaryDark = Color.fromARGB(255, 0, 90, 124);
+  static const Color primaryDark = Color.fromARGB(255, 20, 20, 20);
   static const Color secondary = Color.fromARGB(255, 244, 181, 5);
   static const Color tertiary = Color.fromARGB(255, 0, 88, 209);
   static const Color light = Color.fromARGB(255, 255, 255, 255);

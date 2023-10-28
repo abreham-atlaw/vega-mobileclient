@@ -1,4 +1,4 @@
-const String apiHost = "10.0.2.2:8888";
+const String apiHost = "vega.alwaysdata.net";
 const String apiBaseUrl = "/api";
 
 // AUTH
